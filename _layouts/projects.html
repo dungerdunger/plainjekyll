@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<h2> {{ page.title }} </h2>
+
+{{ content }}
+
+{% for item in site.projects %}
+	<div class="project" id="project-{{ item.title | slugify  }}">	
+		<time>{{ item.date | date: "%b %-d, %Y" }}</time>
+		<h3>{{ item.title }}</h3>
+	</div>
+{% endfor %}
